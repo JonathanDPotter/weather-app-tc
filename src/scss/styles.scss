@@ -1,0 +1,58 @@
+$dark: #264653ff;
+$success: #2a9d8fff;
+$light: rgb(225, 203, 149);
+$warning: #f4a261ff;
+$danger: #e76f51ff;
+
+@import "bootstrap/scss/bootstrap";
+
+body {
+  min-height: 100vh;
+}
+
+.hover-highlight:hover {
+  background-color: transparentize($light, 0.25);
+}
+
+.dropdown-menu {
+  max-height: 50vh;
+  overflow-y: auto;
+  background-color: $dark;
+  button {
+    color: $light;
+  }
+}
+
+.weather-img {
+  height: 200px;
+  width: 200px;
+  border-radius: 10%;
+  margin: 1rem auto;
+}
+
+.alert {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10;
+  text-transform: capitalize;
+  animation: 2s ease-in-out slideIn;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translatex(150%);
+  }
+
+  10% {
+    transform: translatex(0%);
+  }
+
+  90% {
+    transform: translatex(0%);
+  }
+
+  100% {
+    transform: translatex(150%);
+  }
+}
