@@ -1,8 +1,8 @@
-$dark: #264653ff;
-$success: #2a9d8fff;
-$light: rgb(225, 203, 149);
-$warning: #f4a261ff;
-$danger: #e76f51ff;
+$success: #219ebcff;
+$dark: #023047ff;
+$warning: #ffb703ff;
+$danger: rgb(251, 79, 0);
+$primary: #8ecae6ff;
 
 @import "bootstrap/scss/bootstrap";
 
@@ -10,17 +10,26 @@ body {
   min-height: 100vh;
 }
 
+#top-section,
+.card {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
 .hover-highlight:hover {
-  background-color: transparentize($light, 0.25);
+  background-color: transparentize($primary, 0.25);
 }
 
 .dropdown-menu {
   max-height: 50vh;
   overflow-y: auto;
-  background-color: $dark;
-  button {
-    color: $light;
-  }
+  background-color: $light;
+  border: 1px solid $dark;
+}
+
+li {
+  flex-wrap: nowrap;
+  margin-left: auto;
 }
 
 .weather-img {

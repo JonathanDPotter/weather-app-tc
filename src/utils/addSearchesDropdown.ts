@@ -25,14 +25,14 @@ const addSearchesDropdown = (selectedAreas: SelectedAreas) => {
 
   const addLI = (area: any, home = false) => {
     const li = Object.assign(document.createElement("li"), {
-      className: "list-group-item list-group-item-action hover-highlight",
+      className: "list-group-item list-group-item-action",
     });
 
     const button = Object.assign(document.createElement("button"), {
       textContent: home
         ? `Home: ${area.location}, ${area.selectedState}`
         : `${area.location}, ${area.selectedState}`,
-      className: "btn text-capitalize",
+      className: "btn btn-outline-dark text-capitalize",
       type: "button",
       onclick: () => {
         fillWeatherCard(
@@ -45,7 +45,25 @@ const addSearchesDropdown = (selectedAreas: SelectedAreas) => {
       },
     });
 
-    li.appendChild(button);
+    const removeButton = Object.assign(document.createElement("button"), {
+      textContent: "X",
+      className: "btn btn-danger",
+      ariaLabel: "remove search",
+      type: "button",
+      onclick: () => {
+        selectedAreas.removeArea(area.id);
+        searchList.removeChild(li);
+      },
+    });
+
+    const div = Object.assign(document.createElement("div"), {
+      className: "btn-group",
+    });
+
+    div.appendChild(button);
+    div.appendChild(removeButton);
+
+    li.appendChild(div);
 
     searchList?.appendChild(li);
   };

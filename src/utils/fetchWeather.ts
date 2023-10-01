@@ -3,12 +3,12 @@ import SelectedAreas from "../classes/SelectedAreas";
 import fillWeatherCard from "./fillWeatherCard";
 
 export const fetchWeather = async (
-  event: Event,
+  event: Event | undefined,
   location: string,
   selectedState: { code: string },
   selectedAreas: SelectedAreas
 ) => {
-  event.preventDefault();
+  event && event.preventDefault();
   const weatherCard = document.getElementById("weather-card")!;
   const spinner = document.getElementById("spinner")!;
 

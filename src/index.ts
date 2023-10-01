@@ -12,6 +12,8 @@ const selectedAreas = new SelectedAreas();
 
 const selectedState = { code: "" };
 
+fetchWeather(undefined, "portland", {code: "ME"}, selectedAreas)
+
 submit?.addEventListener("click", (event) =>
   fetchWeather(
     event,
