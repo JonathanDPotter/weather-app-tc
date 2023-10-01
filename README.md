@@ -1,6 +1,6 @@
 # Weather App
 
-This is my version of the TrueCoders weather app project. Working on this app helped me improve on my JavaScript DOM manipulation skills. I used HTML templates for the first time on this project and feel like I have come a long way with DOM manipulation.
+This is my version of the TrueCoders weather app project. Working on this app helped me improve on my JavaScript DOM manipulation skills. I used HTML templates for the first time on this project and feel like I have come a long way with DOM manipulation. A live deployment is available on vercel [here](https://weather-app-tc.vercel.app/).
 
 ## Technologies Used
 
