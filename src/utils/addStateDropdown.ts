@@ -9,16 +9,12 @@ const addStateDropdown = (
 ) => {
   const stateNode = dropDownTemplate.content.cloneNode(true);
 
-  stateNode.childNodes[1].childNodes.forEach((node) => {
-    node.nodeName === "BUTTON" && (node.textContent = "State");
-    node.nodeName === "UL" && Object.assign(node, { id: "state-list" });
-  });
-
   searchFieldset.insertBefore(stateNode, submit);
 
   const stateButton = searchFieldset.getElementsByTagName("button")[0];
+  stateButton.textContent = "State";
 
-  const stateList = document.getElementById("state-list");
+  const stateList = searchFieldset.querySelector(".dropdown > ul");
 
   new Dropdown(stateList!);
 

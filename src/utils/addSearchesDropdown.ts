@@ -14,17 +14,12 @@ const addSearchesDropdown = (selectedAreas: SelectedAreas) => {
 
   const searchNode = dropDownTemplate.content.cloneNode(true);
 
-  searchNode.childNodes[1].childNodes.forEach((node) => {
-    node.nodeName === "BUTTON" &&
-      Object.assign(node, {
-        textContent: "Saved Searches",
-      });
-    node.nodeName === "UL" && Object.assign(node, { id: "search-list" });
-  });
-
   topSection.appendChild(searchNode);
 
-  const searchList = document.getElementById("search-list");
+  topSection.querySelectorAll(".dropdown-toggle")[1].textContent =
+    "Saved Searches";
+
+  const searchList = topSection.querySelectorAll(".dropdown > ul")[1];
 
   new Dropdown(searchList!);
 
