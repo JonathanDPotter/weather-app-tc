@@ -4,8 +4,12 @@ This is my version of the TrueCoders weather app project. Working on this app he
 
 ## Technologies Used
 
-I built this app with HTML, CSS, Webpack, TypeScript, SASS and Bootstrap.
+I built this app with HTML, CSS, Webpack, TypeScript, SASS and Bootstrap
 
 ## Functionality
 
 The user enters a city name into the text input and chooses a state from the State dropdown. Upon submitting the form, the weather api is called and a card appears with the current weather conditions on it.
+
+## Thoughts
+
+I used HTML templates and Bootstrap dropdowns for selecting states and saved areas, but I probably should have used select inputs instead. While I am comfortable styling my apps, I am much faster if I am working off of a pre-made design.

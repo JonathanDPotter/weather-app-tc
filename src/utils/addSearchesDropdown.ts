@@ -47,7 +47,7 @@ const addSearchesDropdown = (selectedAreas: SelectedAreas) => {
 
     const removeButton = Object.assign(document.createElement("button"), {
       textContent: "X",
-      className: "btn btn-danger",
+      className: "btn btn-outline-danger",
       ariaLabel: "remove search",
       type: "button",
       onclick: () => {

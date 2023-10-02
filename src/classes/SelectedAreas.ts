@@ -1,10 +1,10 @@
-import Current from "../interfaces/Current";
+import WeatherObject from "../interfaces/WeatherObject";
 
 interface Area {
   id: string;
   location: string;
   selectedState: string;
-  weather: Current;
+  weather: WeatherObject;
   time: Date;
 }
 
@@ -19,21 +19,21 @@ class SelectedAreas {
     this.savedAreas = [];
   }
 
-  addArea(newArea: Area) {
-    const exists = this.savedAreas.find((area) => area.id === newArea.id);
+  exists(id: string) {
+    return this.savedAreas.find((area) => area.id === id);
+  }
 
-    exists
-      ? (this.savedAreas[this.savedAreas.indexOf(exists)] = newArea)
+  addArea(newArea: Area) {
+    // if an area already exists with the same location (id), this will update that Area, otherwise it will push a new Area onto the selectedAreas array 
+    this.exists(newArea.id)
+      ? (this.savedAreas[this.savedAreas.indexOf(this.exists(newArea.id)!)] =
+          newArea)
       : this.savedAreas.push(newArea);
   }
 
   addHomeArea(newArea: Area) {
-    const exists = this.savedAreas.find((area) => area.id === newArea.id);
-
-    console.log(exists)
-
-    exists
-      ? (this.homeArea = exists.id)
+    this.exists(newArea.id)
+      ? (this.homeArea = newArea.id)
       : this.savedAreas.push(newArea) && (this.homeArea = newArea.id);
   }
 

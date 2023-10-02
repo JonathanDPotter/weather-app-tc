@@ -15,15 +15,13 @@
         id="top-section"
       >
         <form method="submit" class="py-4 container" id="search-form">
-          <fieldset class="d-flex border-none gap-4 align-items-center row">
-            <label for="location" class="text-capitalize col">city:</label>
-
-            <input
-              type="text"
-              id="location"
-              required
-              class="rounded px-2 col-md bg-light text-dark shadow"
-            />
+          <fieldset
+            class="d-flex border-none gap-4 align-items-center row form-group"
+          >
+            <div class="col d-flex gap-2">
+              <label for="location" class="text-capitalize">city:</label>
+              <input type="text" id="location" required class="form-control" />
+            </div>
             <input
               type="submit"
               value="go"

@@ -6,7 +6,8 @@ export const fetchWeather = async (
   event: Event | undefined,
   location: string,
   selectedState: { code: string },
-  selectedAreas: SelectedAreas
+  selectedAreas: SelectedAreas,
+  refresh: boolean = false
 ) => {
   event && event.preventDefault();
   const weatherCard = document.getElementById("weather-card")!;
@@ -19,13 +20,21 @@ export const fetchWeather = async (
     !element.classList.contains("d-none") && element.classList.add("d-none");
 
   hide(weatherCard!);
+  // spinner is shown as loading component when fetch is initiated
   show(spinner!);
 
   try {
     const weather = await api.getCurrentWeather(location, selectedState.code);
 
     if (weather) {
-      fillWeatherCard(location, selectedState.code, weather, selectedAreas);
+      fillWeatherCard(
+        location,
+        selectedState.code,
+        weather,
+        selectedAreas,
+        undefined,
+        refresh
+      );
 
       show(weatherCard!);
     }
@@ -44,6 +53,7 @@ export const fetchWeather = async (
       main.removeChild(errorAlert);
     }, 2000);
   } finally {
+    // spinner is hidden when the fetch returns the weather or an error
     hide(spinner!);
   }
 };
